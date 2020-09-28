@@ -8,6 +8,7 @@ namespace Line_Problem
         static float CalulateLength(int x1, int x2, int y1, int y2)
         {
             float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+           
             return length;
         }
 
@@ -42,15 +43,20 @@ namespace Line_Problem
                
             }
 
-            
+            int k = length[0].CompareTo(length[1]);
 
-            if ( length[0].Equals(length[1]) )
+
+            if (k == 0)
             {
                 Console.WriteLine("Equal lines");
             }
+            else if (k > 0)
+            {
+                Console.WriteLine("Line1 is longer  than Line2");
+            }
             else
             {
-                Console.WriteLine("Different lines");
+                Console.WriteLine("Line1 is shorter  than Line2");
             }
 
 
