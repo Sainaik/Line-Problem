@@ -4,28 +4,57 @@ namespace Line_Problem
 {
     class Program
     {
-       
+
+        static float CalulateLength(int x1, int x2, int y1, int y2)
+        {
+            float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+            return length;
+        }
+
         static void Main(string[] args)
         {
             //variables
-            int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+           
+            float[] length = new float[2];
 
+           
+            // Taking user Inputs
 
-            Console.WriteLine("Enter the coordinates of X");
+            for (int i = 0; i <= 1; i++)
+            {
+                int x1 = 0, x2 = 0, y1 = 0, y2 = 0; 
 
-            x1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the Line" + (i+1) + " coordinates");
 
-            x2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the coordinates of X");
 
-            Console.WriteLine("Enter the coordinates of Y");
+                x1 = Convert.ToInt32(Console.ReadLine());
 
-            y1 = Convert.ToInt32(Console.ReadLine());
+                x2 = Convert.ToInt32(Console.ReadLine());
 
-            y2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the coordinates of Y");
 
-            float length = (float) Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+                y1 = Convert.ToInt32(Console.ReadLine());
+
+                y2 = Convert.ToInt32(Console.ReadLine());
+
+                length[i] = CalulateLength(x1, x2, y1, y2);
+               
+            }
+
             
-            Console.WriteLine("Legth of line is "+ length);
+
+            if ( length[0].Equals(length[1]) )
+            {
+                Console.WriteLine("Equal lines");
+            }
+            else
+            {
+                Console.WriteLine("Different lines");
+            }
+
+
+
         }
     }
 }
