@@ -26,23 +26,24 @@ namespace Line_Problem
 
                 Console.WriteLine("Enter the Line" + (i+1) + " coordinates");
 
-                Console.WriteLine("Enter the coordinates of X");
+                Console.WriteLine("Enter the Line" + i++ + " coordinates");
 
+                Console.WriteLine("x1: ");
                 x1 = Convert.ToInt32(Console.ReadLine());
 
-                x2 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter the coordinates of Y");
-
+                Console.WriteLine("y1: ");
                 y1 = Convert.ToInt32(Console.ReadLine());
 
+                Console.WriteLine("Enter the coordinates of ");
+
+                Console.WriteLine("x2: ");
+                x2 = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("y2: ");
                 y2 = Convert.ToInt32(Console.ReadLine());
 
-                length[i] = CalulateLength(x1, x2, y1, y2);
-               
-            }
 
-            
+            }
 
             if ( length[0].Equals(length[1]) )
             {
@@ -52,8 +53,6 @@ namespace Line_Problem
             {
                 Console.WriteLine("Different lines");
             }
-
-
 
         }
     }
