@@ -5,61 +5,35 @@ namespace Line_Problem
     class Program
     {
 
-        static float CalulateLength(int x1, int x2, int y1, int y2)
-        {
-            float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
-           
-            return length;
-        }
+        
 
         static void Main(string[] args)
         {
             //variables
-           
-            float[] length = new float[2];
 
-           
-            // Taking user Inputs
+            int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
 
-            for (int i = 0; i <= 1; i++)
-            {
-                int x1 = 0, x2 = 0, y1 = 0, y2 = 0; 
+            Console.WriteLine("Enter the Line coordinates");
 
-                Console.WriteLine("Enter the Line" + (i+1) + " coordinates");
+            Console.WriteLine("Enter the coordinates");
 
-                Console.WriteLine("Enter the coordinates of X");
+            Console.WriteLine("x1: ");
+            x1 = Convert.ToInt32(Console.ReadLine());
 
-                x1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("y1: ");
+            y1 = Convert.ToInt32(Console.ReadLine());
 
-                x2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the coordinates of ");
 
-                Console.WriteLine("Enter the coordinates of Y");
+            Console.WriteLine("x2: ");
+            x2 = Convert.ToInt32(Console.ReadLine());
 
-                y1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("y2: ");
+            y2 = Convert.ToInt32(Console.ReadLine());
 
-                y2 = Convert.ToInt32(Console.ReadLine());
+            float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
 
-                length[i] = CalulateLength(x1, x2, y1, y2);
-               
-            }
-
-            int k = length[0].CompareTo(length[1]);
-
-
-            if (k == 0)
-            {
-                Console.WriteLine("Equal lines");
-            }
-            else if (k > 0)
-            {
-                Console.WriteLine("Line1 is longer  than Line2");
-            }
-            else
-            {
-                Console.WriteLine("Line1 is shorter  than Line2");
-            }
-
-
+            Console.Out.WriteLine("Length is : " + length + "\n");
 
         }
     }
