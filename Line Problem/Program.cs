@@ -5,54 +5,81 @@ namespace Line_Problem
     class Program
     {
 
-        static float CalulateLength(int x1, int x2, int y1, int y2)
+        static int i = 1;
+
+        public static Line CreateLine()
         {
-            float length = (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
-            return length;
+            int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+
+            Console.WriteLine("Enter the Line" + i++ + " coordinates");
+
+            Console.WriteLine("Enter the coordinates");
+
+            Console.WriteLine("x1: ");
+            x1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("y1: ");
+            y1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the coordinates of ");
+
+            Console.WriteLine("x2: ");
+            x2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("y2: ");
+            y2 = Convert.ToInt32(Console.ReadLine());
+
+            Line line = new Line(x1, x2, y1, y2);
+ 
+            return line;
         }
 
         static void Main(string[] args)
         {
-            //variables
+            
+           // two lines creation
 
-            float[] length = new float[2];
+            Line line1 = CreateLine();
 
+            // line1 length calc
+            line1.CalulateLength();
 
-            // Taking user Inputs
+            Line line2 = CreateLine();
 
-            for (int i = 0; i <= 1; i++)
+            // line2 length calc
+            line2.CalulateLength();
+
+            Console.Out.WriteLine("Comparing two lies beased on End points\n-----------------------------------------");
+
+            bool isequal = line1.IsEqual( line2);
+
+            if(isequal)
             {
-                int x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+                Console.Out.WriteLine("Both are equal\n");
 
-                Console.WriteLine("Enter the Line" + (i + 1) + " coordinates");
-
-                Console.WriteLine("Enter the Line" + i++ + " coordinates");
-
-                Console.WriteLine("x1: ");
-                x1 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("y1: ");
-                y1 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter the coordinates of ");
-
-                Console.WriteLine("x2: ");
-                x2 = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("y2: ");
-                y2 = Convert.ToInt32(Console.ReadLine());
-
-
-            }
-
-            if (length[0].Equals(length[1]))
-            {
-                Console.WriteLine("Equal lines");
             }
             else
             {
-                Console.WriteLine("Different lines");
+                Console.Out.WriteLine("Both are not equal\n");
             }
+            // comparing two lines length 
+            Console.Out.WriteLine("Comparing two lies beased on length \n----------------------------------------");
+            int k = line1.CompareLines(line2);
+
+            if ( k == 0)
+            {
+                Console.WriteLine("Equal lines");
+            }
+            else if( k > 0)
+            {
+                Console.WriteLine("Line 1 is longer than line 2");
+            }
+            else
+            {
+                Console.WriteLine("Line 1 is shorter than line 2");
+            }
+
+
 
         }
     }
